@@ -1,0 +1,1 @@
+window.App = angular.module('P0cl4bs-db', ['ngResource']);

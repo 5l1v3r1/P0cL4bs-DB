@@ -14,5 +14,13 @@
     "link": "http://www.exploit-db.com/exploits/35161",
     "lang": "python",
     "author": "Joridos"
+  },
+  {
+    "date" : "08/11/2014", 
+    "name": "mass defacer",
+    "description": "tools for defacement",
+    "link": "http://www.site-tools.com/tools/mass_defacer.py",
+    "lang": "python",
+    "author": "Joridos"
   }
 ]

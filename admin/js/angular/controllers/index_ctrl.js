@@ -1,6 +1,6 @@
 App.controller('indexCtrl', ['$scope', 'Data', function ($scope, Data) {
   Data.exploit.query().$promise.then(function(exploit) {
-    $scope.TotalExploit = exploit.length;
+    $scope.TotalExploit = exploits.length;
   });;
 
   Data.tools.query().$promise.then(function(tools) {

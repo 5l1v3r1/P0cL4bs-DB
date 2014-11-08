@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="P0cl4bs-db">
 
 <head>
 
@@ -35,7 +35,7 @@
 
 </head>
 
-<body>
+<body ng-controller="dorksCtrl">
 
     <div id="wrapper">
 
@@ -88,7 +88,14 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            List of all registered Dorks
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    List of all registered Dorks
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="search" class="form-control" placeholder="Pesquise aqui" ng-model="search.$">
+                                </div>
+                            </div>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -103,17 +110,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>20/08/2014</td>
-                                            <td>inurl:logon.html "CSCOE"</td>
-                                            <td>Pages containing login portals</td>
-                                            <td class="center">metacom</td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>12/11/2014</td>
-                                            <td>filetype:log intext:org.apache.hadoop.hdfs</td>
-                                            <td>Files containing juicy info/td>
-                                            <td class="center">zx2c4</td>
+                                        <tr ng-repeat="dork in Dorks | filter:search" class="odd gradeX">
+                                            <td>{{dork.date}}</td>
+                                            <td>{{dork.dork}}</td>
+                                            <td>{{dork.description}}</td>
+                                            <td>{{dork.author}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -132,6 +133,12 @@
     </div>
     <!-- /#wrapper -->
 
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular-resource.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/angular/services/data.js"></script>
+    <script type="text/javascript" src="js/angular/controllers/dorks_ctrl.js"></script>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -141,19 +148,8 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
-    <!-- DataTables JavaScript -->
-    <script src="js/plugins/dataTables/jquery.dataTables.js"></script>
-    <script src="js/plugins/dataTables/dataTables.bootstrap.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="js/sb-admin-2.js"></script>
-
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').dataTable();
-    });
-    </script>
 
 </body>
 

@@ -16,5 +16,11 @@
     "dork": "dcid= bn= pin code=",
     "description": "Sensitive Online Shopping Info",
     "author": "Joridos"
+  },
+  {
+    "date" : "08/11/2014", 
+    "dork": "inurl:index.php.?id='",
+    "description": "find servers vulnerabel for sql injection",
+    "author": "Joridos"
   }
 ]
